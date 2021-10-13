@@ -50,7 +50,6 @@ pipeline {
                     steps {
                         echo 'Publishing Release ...'
                         sh 'npm run publish:release'
-                        sh 'git push origin HEAD:master'
                         sshagent(['git-openhps-ssh']) {
                             sh "git push origin master"
                         }
