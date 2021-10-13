@@ -3,7 +3,7 @@ import { ImageFrame } from './ImageFrame';
 import { PerspectiveCameraObject, StereoCameraObject } from './object';
 
 @SerializableObject()
-export class StereoImageFrame<I> extends DataFrame {
+export class StereoImageFrame<I = any> extends DataFrame {
     @SerializableMember()
     left: ImageFrame<I, PerspectiveCameraObject>;
     @SerializableMember()
