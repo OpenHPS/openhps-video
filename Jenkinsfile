@@ -71,7 +71,17 @@ pipeline {
                 reportFiles: '*.*',
                 reportName: "Documentation"
             ])
-            archiveArtifacts artifacts: 'dist/web/*.*', fingerprint: true
+
+            archiveArtifacts artifacts: 'dist/web/openhps-video.es.js', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.es.js.map', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.es.min.js', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.es.min.js.map', fingerprint: true
+
+            archiveArtifacts artifacts: 'dist/web/openhps-video.js', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.js.map', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.min.js', fingerprint: true
+            archiveArtifacts artifacts: 'dist/web/openhps-video.min.js.map', fingerprint: true
+
             deleteDir()
         }
     }
