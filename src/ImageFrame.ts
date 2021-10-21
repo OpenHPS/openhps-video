@@ -1,16 +1,9 @@
-import { DataFrame, SerializableObject, SerializableMember, DataSerializer } from '@openhps/core';
+import { DataFrame, SerializableObject, SerializableMember } from '@openhps/core';
 import { CameraObject } from './object';
 
 @SerializableObject()
 export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends DataFrame {
-    @SerializableMember({
-        serializer: (obj) => {
-            return DataSerializer.serialize(obj);
-        },
-        deserializer: (json) => {
-            return DataSerializer.deserialize(json);
-        },
-    })
+    @SerializableMember()
     image: I;
 
     /**
