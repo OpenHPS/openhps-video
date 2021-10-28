@@ -24,6 +24,18 @@ describe('ImageFrame', () => {
         expect(frame.source).to.be.instanceOf(CameraObject);
     });
 
+    it('should use rows and cols as an alias for height and width', () => {
+        const frame = new ImageFrame<any>();
+        frame.width = 10;
+        frame.height = 15;
+        expect(frame.width).to.eql(frame.cols);
+        expect(frame.height).to.eql(frame.rows);
+        frame.rows = 11;
+        frame.cols = 12;
+        expect(frame.width).to.eql(frame.cols);
+        expect(frame.height).to.eql(frame.rows);
+    });
+
     describe('serialization', () => {
 
         it('should serialize images', () => {

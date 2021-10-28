@@ -10,17 +10,43 @@ export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends 
      * Height (rows)
      */
     @SerializableMember()
-    rows: number;
+    height: number;
     /**
      * Width (cols)
      */
     @SerializableMember()
-    cols: number;
+    width: number;
 
     @SerializableMember()
     fourcc: number;
     @SerializableMember()
     fps: number;
+
+    /**
+     * Height of image
+     *
+     * @returns {number} Height
+     */
+    get rows(): number {
+        return this.height;
+    }
+
+    set rows(value: number) {
+        this.height = value;
+    }
+
+    /**
+     * Width of image
+     *
+     * @returns {number} Width
+     */
+    get cols(): number {
+        return this.width;
+    }
+
+    set cols(value: number) {
+        this.width = value;
+    }
 
     /**
      * Source object clone that captured the data frame
