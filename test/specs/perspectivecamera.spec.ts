@@ -1,4 +1,4 @@
-import { DataSerializer } from '@openhps/core';
+import { DataSerializer, Matrix3 } from '@openhps/core';
 import { expect } from 'chai';
 import 'mocha';
 import { PerspectiveCameraObject } from '../../src';
@@ -19,5 +19,23 @@ describe('PerspectiveCameraObject', () => {
         camera.cols = 222;
         expect(camera.width).to.eql(camera.cols);
         expect(camera.height).to.eql(camera.rows);
+    });
+
+    it('should extract information from a camera matrix', () => {
+        const camera = new PerspectiveCameraObject("test");
+        camera.cameraMatrix = new Matrix3();
+        camera.cameraMatrix.elements = [
+            1227.4268505094178,
+            0,
+            0,
+            0,
+            745.0652873150333,
+            0,
+            971.3223425564173,
+            424.4964844126374,
+            1
+        ];
+        expect(camera.focalLength).to.eql([1227.4268505094178, 745.0652873150333]);
+        expect(camera.principalPoint).to.eql([971.3223425564173, 424.4964844126374]);
     });
 });

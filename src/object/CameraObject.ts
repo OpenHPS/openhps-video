@@ -19,6 +19,8 @@ export class CameraObject extends DataObject {
 
     /**
      * Distortion coefficients
+     *
+     * @returns {number[]} [k1, k2, p1, p2, (k3, (k4, k5))]
      */
     @SerializableArrayMember(Number)
     distortionCoefficients: number[];
@@ -37,6 +39,30 @@ export class CameraObject extends DataObject {
      */
     @SerializableMember()
     colorOrder: ColorOrder = ColorOrder.RGB;
+
+    /**
+     * Get the focal length in pixels
+     *
+     * @returns {[number, number]} Focal length for x and y axis
+     */
+    get focalLength(): [number, number] {
+        if (!this.cameraMatrix) {
+            return undefined;
+        }
+        return [this.cameraMatrix.elements[0], this.cameraMatrix.elements[4]];
+    }
+
+    /**
+     * Get the principal point in pixels
+     *
+     * @returns {[number, number]} Principal point for x and y axis
+     */
+    get principalPoint(): [number, number] {
+        if (!this.cameraMatrix) {
+            return undefined;
+        }
+        return [this.cameraMatrix.elements[6], this.cameraMatrix.elements[7]];
+    }
 
     /**
      * Camera frustum aspect ratio.

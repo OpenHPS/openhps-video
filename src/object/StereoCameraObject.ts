@@ -4,8 +4,14 @@ import { PerspectiveCameraObject } from './PerspectiveCameraObject';
 
 @SerializableObject()
 export class StereoCameraObject extends CameraObject {
+    /**
+     * Left perspective camera
+     */
     @SerializableMember()
     cameraL: PerspectiveCameraObject;
+    /**
+     * Right perspective camera
+     */
     @SerializableMember()
     cameraR: PerspectiveCameraObject;
     /**
