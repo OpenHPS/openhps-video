@@ -3,4 +3,8 @@ import { DepthImageFrame } from './DepthImageFrame';
 import { CameraObject } from './object';
 
 @SerializableObject()
-export class DepthVideoFrame<I = any, C extends CameraObject = CameraObject> extends DepthImageFrame<I, C> {}
+export class DepthVideoFrame<D = any, I = any, C extends CameraObject = CameraObject> extends DepthImageFrame<
+    D,
+    I,
+    C
+> {}
