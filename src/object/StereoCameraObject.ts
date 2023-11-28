@@ -16,7 +16,6 @@ export class StereoCameraObject extends CameraObject {
     cameraR: PerspectiveCameraObject;
     /**
      * Camera eye separation
-     *
      * @default 0.064
      */
     @SerializableMember()
