@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@openhps/video - Basic Example</title>
+    </head>
+    <body>
+        <script type="module">
+        import { ModelBuilder, DataSerializer, DataObject } from '../common/openhps-core.es.js';
+        import { CameraObject } from '../common/openhps-video.es.js';
+
+        ModelBuilder.create()
+            .from()
+            .to()
+            .build().then(model => {
+                console.log(model);
+                const abc = new DataObject("test");
+                console.log(abc);
+                const object = new CameraObject("test");
+                console.log(DataSerializer.serialize(object));
+            }).catch(console.error);
+        </script>
+    </body>
+</html>

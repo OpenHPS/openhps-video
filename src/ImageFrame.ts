@@ -24,7 +24,6 @@ export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends 
 
     /**
      * Height of image
-     *
      * @returns {number} Height
      */
     get rows(): number {
@@ -37,7 +36,6 @@ export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends 
 
     /**
      * Width of image
-     *
      * @returns {number} Width
      */
     get cols(): number {
@@ -50,7 +48,6 @@ export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends 
 
     /**
      * Source object clone that captured the data frame
-     *
      * @returns {CameraObject} Source data object
      */
     get source(): C {
@@ -59,7 +56,6 @@ export class ImageFrame<I = any, C extends CameraObject = CameraObject> extends 
 
     /**
      * Set the source object clone that captured the data frame
-     *
      * @param {CameraObject} object Source data object
      */
     set source(object: C) {

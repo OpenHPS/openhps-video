@@ -11,7 +11,6 @@ export class StereoImageFrame<I = any> extends DataFrame {
 
     /**
      * Source object clone that captured the data frame
-     *
      * @returns {StereoCameraObject} Source data object
      */
     get source(): StereoCameraObject {
@@ -20,7 +19,6 @@ export class StereoImageFrame<I = any> extends DataFrame {
 
     /**
      * Set the source object clone that captured the data frame
-     *
      * @param {StereoCameraObject} object Source data object
      */
     set source(object: StereoCameraObject) {
