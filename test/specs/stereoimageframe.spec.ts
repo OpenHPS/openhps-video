@@ -4,7 +4,6 @@ import { DataSerializer } from '@openhps/core';
 import { expect } from 'chai';
 
 describe('StereoImageFrame', () => {
-
     it('should create a source abstraction', () => {
         class Image {
             data: Buffer;
@@ -16,11 +15,10 @@ describe('StereoImageFrame', () => {
                 this.width = width;
                 this.height = height;
             }
-        };
+        }
 
         const frame = new StereoImageFrame<Image>();
         frame.source = new StereoCameraObject();
         expect(frame.source).to.be.instanceOf(StereoCameraObject);
     });
-
 });
