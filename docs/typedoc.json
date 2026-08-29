@@ -4,5 +4,7 @@
     "exclude": ["**/_internal/**/*"],
     "excludePrivate": true,
     "hideGenerator": true,
-    "categorizeByGroup": true
+    "categorizeByGroup": true,
+    "tsconfig": "../tsconfig/tsconfig.app.json",
+    "entryPointStrategy": "expand"
 }
