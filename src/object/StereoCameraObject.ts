@@ -25,7 +25,7 @@ export class StereoCameraObject extends CameraObject {
         super(uid, displayName);
         this.cameraL = left;
         this.cameraR = right;
-        if (left !== undefined && right !== undefined) {
+        if (uid === undefined && left !== undefined && right !== undefined) {
             this.uid = left.uid + right.uid;
         }
     }

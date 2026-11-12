@@ -43,7 +43,7 @@ export class CameraObject extends DataObject {
      * Get the focal length in pixels
      * @returns {[number, number]} Focal length for x and y axis
      */
-    get focalLength(): [number, number] {
+    get focalLength(): [number, number] | undefined {
         if (!this.cameraMatrix) {
             return undefined;
         }
@@ -54,7 +54,7 @@ export class CameraObject extends DataObject {
      * Get the principal point in pixels
      * @returns {[number, number]} Principal point for x and y axis
      */
-    get principalPoint(): [number, number] {
+    get principalPoint(): [number, number] | undefined {
         if (!this.cameraMatrix) {
             return undefined;
         }
@@ -97,7 +97,7 @@ export class CameraObject extends DataObject {
         super(uid, displayName);
         this.width = width || 0;
         this.height = height || 0;
-        this.distortionCoefficients = this.distortionCoefficients ?? [0, 0, 0, 0, 0];
+        this.distortionCoefficients = [0, 0, 0, 0, 0];
     }
 }
 
